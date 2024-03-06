@@ -1,6 +1,5 @@
 html,
 body,
-div,
 #root
 {
     position: fixed;
@@ -10,3 +9,11 @@ div,
     height: 100%;
     overflow: hidden;
 }
+
+.container {
+    margin: 20px auto;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
