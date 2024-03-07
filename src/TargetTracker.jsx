@@ -78,7 +78,7 @@ export default () => {
     renderer.setAnimationLoop(() => {
       if (modelRef.current) {
         // This will rotate the model on the Z-axis over time
-        modelRef.current.rotation.y += 0.01;
+        //modelRef.current.rotation.y += 0.01;
       }
       renderer.render(scene, camera);
     });
