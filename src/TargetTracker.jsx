@@ -13,9 +13,9 @@ export default () => {
 
       container: containerRef.current,
       imageTargetSrc: "/business-card.mind",
-      filterMinCF: 0.1,
+      filterMinCF: 0.01,
       filterBeta: 10
-      
+
     });
     const {renderer, scene, camera} = mindarThree;
 
