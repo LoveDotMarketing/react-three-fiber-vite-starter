@@ -30,6 +30,14 @@ export default () => {
 
     anchor.group.add(circleMesh);
 
+    const slabGeometry = new THREE.BoxGeometry(0.5, 0.1, 0.5); // Width, Height, Depth - adjust as needed
+    const slabMaterial = new THREE.MeshLambertMaterial({ color: 0x808080 }); // Concrete color
+    const slabMesh = new THREE.Mesh(slabGeometry, slabMaterial);
+    slabMesh.position.y = 0; // Adjust so that it's right on top of the circle
+
+    anchor.group.add(slabMesh);
+
+
     const ambientLight = new THREE.AmbientLight(0xffffff, 2.0); // soft white light
     scene.add(ambientLight);
 
