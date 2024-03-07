@@ -88,7 +88,7 @@ export default () => {
 
     new RGBELoader()
       .setDataType(THREE.HalfFloatType)
-      .load('/venice_sunset_1k.hdr', (texture) => {
+      .load('/venice_sunset_compressed.hdr', (texture) => {
         const envMap = pmremGenerator.fromEquirectangular(texture).texture;
         pmremGenerator.dispose();
         scene.environment = envMap; // Set the processed HDR texture as the scene environment
