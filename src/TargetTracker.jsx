@@ -16,6 +16,13 @@ export default () => {
     const {renderer, scene, camera} = mindarThree;
     const anchor = mindarThree.addAnchor(0);
 
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.6); // soft white light
+    scene.add(ambientLight);
+
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+    directionalLight.position.set(0, 1, 0); // adjust the direction
+    scene.add(directionalLight);
+
     /*const geometry = new THREE.PlaneGeometry(1, 0.55);
     const material = new THREE.MeshBasicMaterial( {color: 0x00ffff, transparent: true, opacity: 0.5} );
     const plane = new THREE.Mesh( geometry, material );*/
@@ -55,12 +62,7 @@ export default () => {
 
   return (
     <div style={{width: "100%", height: "100%"}} ref={containerRef}>
-      <Canvas style={{ width: '100vw', height: '100vh' }}>
-        <ambientLight intensity={1.0} />
-        <directionalLight position={[10, 10, 5]} intensity={1} />
-        
-        <Environment preset="sunset"/>
-      </Canvas>
+      
     </div>
   )
 }
