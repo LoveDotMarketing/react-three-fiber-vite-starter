@@ -32,7 +32,7 @@ export default () => {
           const steelMaterial = new THREE.MeshStandardMaterial({
             color: 0xffffff, // Steel color
             metalness: 1.0, // Full metalness to mimic steel
-            roughness: 0.2 // Slightly rough to mimic steel's appearance
+            roughness: 0.1 // Slightly rough to mimic steel's appearance
           });
           child.material = steelMaterial;
         }
@@ -55,8 +55,8 @@ export default () => {
 
   return (
     <div style={{width: "100%", height: "100%"}} ref={containerRef}>
-      <Canvas>
-        <ambientLight intensity={0.5} />
+      <Canvas style={{ width: '100vw', height: '100vh' }}>
+        <ambientLight intensity={1.0} />
         <directionalLight position={[10, 10, 5]} intensity={1} />
         
         <Environment preset="sunset"/>
