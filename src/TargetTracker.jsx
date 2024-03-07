@@ -2,8 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import {MindARThree} from 'mind-ar/dist/mindar-image-three.prod.js';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
-import { Canvas } from '@react-three/fiber'
-import { Environment } from '@react-three/drei'
+import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader.js';
 
 export default () => {
   const containerRef = useRef(null);
@@ -14,6 +13,12 @@ export default () => {
       imageTargetSrc: "/business-card.mind"
     });
     const {renderer, scene, camera} = mindarThree;
+
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 2;
+    renderer.outputEncoding = THREE.sRGBEncoding;
+
+
     const anchor = mindarThree.addAnchor(0);
 
     const ambientLight = new THREE.AmbientLight(0xffffff, 2.0); // soft white light
@@ -48,6 +53,17 @@ export default () => {
       anchor.group.add(model);
     });
 
+
+    const pmremGenerator = new THREE.PMREMGenerator(renderer);
+    pmremGenerator.compileEquirectangularShader();
+
+    new RGBELoader()
+      .setDataType(THREE.HalfFloatType) // If your HDR is not in float/ half float format
+      .load('/venice_sunset_1k.hdr', (texture) => {
+        const envMap = pmremGenerator.fromEquirectangular(texture).texture;
+        pmremGenerator.dispose();
+        scene.environment = envMap; // Set the processed HDR texture as the scene environment
+      });
 
     mindarThree.start();
     renderer.setAnimationLoop(() => {
