@@ -38,7 +38,7 @@ export default () => {
 
       model.scale.set(0.1, 0.1, 0.1);
       model.rotation.x = Math.PI / 2;
-      model.rotation.z = Math.PI / 2;
+      model.rotation.z = Math.PI;
 
       // Apply steel-like material
       model.traverse((child) => {
