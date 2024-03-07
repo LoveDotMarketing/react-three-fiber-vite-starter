@@ -10,8 +10,12 @@ export default () => {
 
   useEffect(() => {
     const mindarThree = new MindARThree({
+
       container: containerRef.current,
-      imageTargetSrc: "/business-card.mind"
+      imageTargetSrc: "/business-card.mind",
+      filterMinCF: 0.1,
+      filterBeta: 10
+      
     });
     const {renderer, scene, camera} = mindarThree;
 
