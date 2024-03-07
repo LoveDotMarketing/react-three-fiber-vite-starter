@@ -26,15 +26,15 @@ export default () => {
     const circleMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
     const circleMesh = new THREE.Mesh(circleGeometry, circleMaterial);
     circleMesh.rotation.z = -Math.PI / 2; // Rotate the circle to be parallel to the ground
-    circleMesh.position.z = -0.15; // Adjust the Y position to place it below the model
+    circleMesh.position.z = -0.35; // Adjust the Y position to place it below the model
 
     anchor.group.add(circleMesh);
 
-    const slabGeometry = new THREE.BoxGeometry(0.25, 0.25, 0.05); // Width, Height, Depth - adjust as needed
+    const slabGeometry = new THREE.BoxGeometry(0.35, 0.35, 0.025); // Width, Height, Depth - adjust as needed
     const slabMaterial = new THREE.MeshLambertMaterial({ color: 0x808080 }); // Concrete color
     const slabMesh = new THREE.Mesh(slabGeometry, slabMaterial);
     slabMesh.rotation.z = -Math.PI / 2;
-    slabMesh.position.z = -0.1; // Adjust so that it's right on top of the circle
+    slabMesh.position.z = -0.25; // Adjust so that it's right on top of the circle
     slabMesh.position.x = .3;
 
     anchor.group.add(slabMesh);
