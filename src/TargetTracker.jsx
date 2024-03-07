@@ -22,7 +22,7 @@ export default () => {
 
     const anchor = mindarThree.addAnchor(0);
 
-    const circleGeometry = new THREE.CircleGeometry(0.6, 32); // Adjust the radius as needed
+    const circleGeometry = new THREE.CircleGeometry(0.75, 32); // Adjust the radius as needed
     const circleMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
     const circleMesh = new THREE.Mesh(circleGeometry, circleMaterial);
     circleMesh.rotation.z = -Math.PI / 2; // Rotate the circle to be parallel to the ground
@@ -30,12 +30,12 @@ export default () => {
 
     anchor.group.add(circleMesh);
 
-    const slabGeometry = new THREE.BoxGeometry(0.2, 0.2, 0.05); // Width, Height, Depth - adjust as needed
+    const slabGeometry = new THREE.BoxGeometry(0.25, 0.25, 0.05); // Width, Height, Depth - adjust as needed
     const slabMaterial = new THREE.MeshLambertMaterial({ color: 0x808080 }); // Concrete color
     const slabMesh = new THREE.Mesh(slabGeometry, slabMaterial);
     slabMesh.rotation.z = -Math.PI / 2;
-    slabMesh.position.z = 0; // Adjust so that it's right on top of the circle
-    slabMesh.position.x = .25;
+    slabMesh.position.z = -0.1; // Adjust so that it's right on top of the circle
+    slabMesh.position.x = .3;
 
     anchor.group.add(slabMesh);
 
@@ -59,7 +59,7 @@ export default () => {
       model.rotation.x = Math.PI / 2;
       model.rotation.z = Math.PI / 3;
 
-      model.position.z = 0.25;
+      model.position.z = 0.3;
       model.position.y = -0.05;
 
       // Apply steel-like material
