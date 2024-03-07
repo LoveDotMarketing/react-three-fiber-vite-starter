@@ -23,7 +23,7 @@ export default () => {
     const anchor = mindarThree.addAnchor(0);
 
     const circleGeometry = new THREE.CircleGeometry(0.75, 32); // Adjust the radius as needed
-    const circleMaterial = new THREE.MeshBasicMaterial({ color: 0x008000 });
+    const circleMaterial = new THREE.MeshBasicMaterial({ color: 0x005e1b });
     const circleMesh = new THREE.Mesh(circleGeometry, circleMaterial);
     circleMesh.rotation.z = -Math.PI / 2; // Rotate the circle to be parallel to the ground
     circleMesh.position.z = -0.15; // Adjust the Y position to place it below the model
