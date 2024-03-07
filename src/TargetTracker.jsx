@@ -13,7 +13,7 @@ export default () => {
 
       container: containerRef.current,
       imageTargetSrc: "/business-card.mind",
-      filterMinCF: 0.0001,
+      filterMinCF: 1.0,
       filterBeta: 10
 
     });
