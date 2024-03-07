@@ -16,10 +16,10 @@ export default () => {
     const {renderer, scene, camera} = mindarThree;
     const anchor = mindarThree.addAnchor(0);
 
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.6); // soft white light
+    const ambientLight = new THREE.AmbientLight(0xffffff, 2.0); // soft white light
     scene.add(ambientLight);
 
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 2.0);
     directionalLight.position.set(0, 1, 0); // adjust the direction
     scene.add(directionalLight);
 
