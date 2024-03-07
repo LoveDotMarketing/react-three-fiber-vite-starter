@@ -27,6 +27,7 @@ export default () => {
     const circleMesh = new THREE.Mesh(circleGeometry, circleMaterial);
     circleMesh.rotation.z = -Math.PI / 2; // Rotate the circle to be parallel to the ground
     circleMesh.position.z = -0.25; // Adjust the Y position to place it below the model
+    circleMesh.position.y = 0.05;
 
     anchor.group.add(circleMesh);
 
@@ -60,7 +61,7 @@ export default () => {
       model.rotation.x = Math.PI / 2;
       model.rotation.z = Math.PI / 3;
 
-      model.position.z = 0.25;
+      model.position.z = 0.27;
       model.position.y = -0.05;
 
       // Apply steel-like material
