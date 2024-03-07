@@ -28,7 +28,7 @@ export default () => {
       model.traverse((child) => {
         if (child.isMesh) {
           const steelMaterial = new THREE.MeshStandardMaterial({
-            color: 0x808080, // Steel color
+            color: FFFFFF, // Steel color
             metalness: 1.0, // Full metalness to mimic steel
             roughness: 0.2 // Slightly rough to mimic steel's appearance
           });
