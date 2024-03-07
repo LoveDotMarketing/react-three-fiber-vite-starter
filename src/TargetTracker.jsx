@@ -37,6 +37,7 @@ export default () => {
       const model = gltf.scene;
 
       model.scale.set(0.1, 0.1, 0.1);
+      model.rotation.x = Math.PI / 2;
 
       // Apply steel-like material
       model.traverse((child) => {
