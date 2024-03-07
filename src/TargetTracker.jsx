@@ -25,7 +25,7 @@ export default () => {
     const circleGeometry = new THREE.CircleGeometry(0.5, 32); // Adjust the radius as needed
     const circleMaterial = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
     const circleMesh = new THREE.Mesh(circleGeometry, circleMaterial);
-    circleMesh.rotation.x = -Math.PI / 2; // Rotate the circle to be parallel to the ground
+    circleMesh.rotation.z = -Math.PI / 2; // Rotate the circle to be parallel to the ground
     circleMesh.position.y = -0.1; // Adjust the Y position to place it below the model
 
     anchor.group.add(circleMesh);
