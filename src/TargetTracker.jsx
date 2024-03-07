@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from 'react';
 import {MindARThree} from 'mind-ar/dist/mindar-image-three.prod.js';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { Canvas } from '@react-three/fiber'
+import { Environment } from '@react-three/drei'
 
 export default () => {
   const containerRef = useRef(null);
@@ -28,7 +30,7 @@ export default () => {
       model.traverse((child) => {
         if (child.isMesh) {
           const steelMaterial = new THREE.MeshStandardMaterial({
-            color: FFFFFF, // Steel color
+            color: 0xffffff, // Steel color
             metalness: 1.0, // Full metalness to mimic steel
             roughness: 0.2 // Slightly rough to mimic steel's appearance
           });
@@ -53,6 +55,12 @@ export default () => {
 
   return (
     <div style={{width: "100%", height: "100%"}} ref={containerRef}>
+      <Canvas>
+        <ambientLight intensity={0.5} />
+        <directionalLight position={[10, 10, 5]} intensity={1} />
+        
+        <Environment preset="sunset" background={false} />
+      </Canvas>
     </div>
   )
 }
