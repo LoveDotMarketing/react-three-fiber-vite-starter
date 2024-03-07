@@ -6,6 +6,7 @@ import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader.js';
 
 export default () => {
   const containerRef = useRef(null);
+  const modelRef = useRef();
 
   useEffect(() => {
     const mindarThree = new MindARThree({
@@ -40,7 +41,8 @@ export default () => {
       model.rotation.x = Math.PI / 2;
       model.rotation.z = Math.PI / 3;
 
-      model.position.z = 0.5;
+      model.position.z = 0.25;
+      model.position.y = -0.05;
 
       // Apply steel-like material
       model.traverse((child) => {
@@ -54,6 +56,9 @@ export default () => {
         }
       });
 
+
+      modelRef.current = model;
+
       anchor.group.add(model);
     });
 
@@ -62,7 +67,7 @@ export default () => {
     pmremGenerator.compileEquirectangularShader();
 
     new RGBELoader()
-      .setDataType(THREE.HalfFloatType) // If your HDR is not in float/ half float format
+      .setDataType(THREE.HalfFloatType)
       .load('/venice_sunset_1k.hdr', (texture) => {
         const envMap = pmremGenerator.fromEquirectangular(texture).texture;
         pmremGenerator.dispose();
@@ -71,6 +76,10 @@ export default () => {
 
     mindarThree.start();
     renderer.setAnimationLoop(() => {
+      if (modelRef.current) {
+        // This will rotate the model on the Z-axis over time
+        modelRef.current.rotation.z += 0.01;
+      }
       renderer.render(scene, camera);
     });
 
