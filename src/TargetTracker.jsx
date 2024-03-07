@@ -59,7 +59,7 @@ export default () => {
         <ambientLight intensity={0.5} />
         <directionalLight position={[10, 10, 5]} intensity={1} />
         
-        <Environment preset="sunset" background={false} />
+        <Environment preset="sunset"/>
       </Canvas>
     </div>
   )
