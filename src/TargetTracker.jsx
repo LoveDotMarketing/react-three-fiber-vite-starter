@@ -22,6 +22,8 @@ export default () => {
     loader.load('/plane_sculpture-contrail_asm_asm.glb', (gltf) => {
       const model = gltf.scene;
 
+      model.scale.set(0.1, 0.1, 0.1);
+
       // Apply steel-like material
       model.traverse((child) => {
         if (child.isMesh) {
