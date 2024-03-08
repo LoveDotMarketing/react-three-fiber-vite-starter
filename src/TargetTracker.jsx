@@ -38,8 +38,8 @@ export default () => {
     const slabGeometry = new THREE.BoxGeometry(0.35, 0.35, 0.025); // Width, Height, Depth - adjust as needed
     const slabMaterial = new THREE.MeshLambertMaterial({ color: 0x808080 }); // Concrete color
     const slabMesh = new THREE.Mesh(slabGeometry, slabMaterial);
-    slabMesh.rotation.z = 90;
-    slabMesh.rotation.x = Math.PI / 2;
+    
+    slabMesh.rotation.x = 0;
     slabMesh.position.z = -0.05; // Adjust so that it's right on top of the circle
     slabMesh.position.x = .3;
     slabMesh.position.y = 0.05;
