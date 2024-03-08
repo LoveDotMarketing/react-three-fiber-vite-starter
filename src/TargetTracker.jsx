@@ -42,7 +42,7 @@ export default () => {
     slabMesh.rotation.x = 0;
     slabMesh.position.z = -0.1; // Adjust so that it's right on top of the circle
     slabMesh.position.x = -0.10;
-    slabMesh.position.y = 0.1;
+    slabMesh.position.y = 0.2;
 
     anchor.group.add(slabMesh);
 
