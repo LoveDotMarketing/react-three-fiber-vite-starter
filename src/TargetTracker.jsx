@@ -64,6 +64,7 @@ export default () => {
       model.scale.set(0.1, 0.1, 0.1);
       model.rotation.x = Math.PI / 2;
       model.rotation.z = Math.PI / 3;
+      model.rotation.y = Math.PI / 2;
 
       model.position.z = 0.38;
       model.position.y = -0.05;
