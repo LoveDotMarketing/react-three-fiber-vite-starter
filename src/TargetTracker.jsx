@@ -68,7 +68,7 @@ export default () => {
       model.rotation.y = Math.PI / 2;
 
       model.position.z = 0.38;
-      model.position.y = -0.05;
+      model.position.y = 0;
 
       // Apply steel-like material
       model.traverse((child) => {
