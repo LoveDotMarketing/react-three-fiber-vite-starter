@@ -39,6 +39,7 @@ export default () => {
     const slabMaterial = new THREE.MeshLambertMaterial({ color: 0x808080 }); // Concrete color
     const slabMesh = new THREE.Mesh(slabGeometry, slabMaterial);
     slabMesh.rotation.z = -Math.PI / 2;
+    slabMesh.rotation.y = Math.PI / 2;
     slabMesh.position.z = -0.05; // Adjust so that it's right on top of the circle
     slabMesh.position.x = .3;
     slabMesh.position.y = 0.05;
