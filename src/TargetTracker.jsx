@@ -12,7 +12,7 @@ export default () => {
     const mindarThree = new MindARThree({
 
       container: containerRef.current,
-      imageTargetSrc: "/business-card.mind",
+      imageTargetSrc: "/fiesta-medal-target.mind",
       filterMinCF: 0.0001,
       filterBeta: 0.01
 
