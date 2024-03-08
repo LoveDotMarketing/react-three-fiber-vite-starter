@@ -40,8 +40,8 @@ export default () => {
     const slabMesh = new THREE.Mesh(slabGeometry, slabMaterial);
     
     slabMesh.rotation.x = 0;
-    slabMesh.position.z = -0.1; // Adjust so that it's right on top of the circle
-    slabMesh.position.x = -0.15;
+    slabMesh.position.z = -0.2; // Adjust so that it's right on top of the circle
+    slabMesh.position.x = -0.10;
     slabMesh.position.y = 0.05;
 
     anchor.group.add(slabMesh);
